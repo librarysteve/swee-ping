@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 
 #################################
-#	Ping Sweepr         		#
-#	A script to         		#
-#	Sweep your pings 	        #
+#	Ping Sweepr          #
+#	A script to          #
+#	Sweep your pings     #
 #################################
 from icmplib import ping
 import sys
@@ -22,25 +22,6 @@ swee-ping [RANGE] [COUNT] [INTERVAL]\n\nPositional Arguments (required):\n	ARG		
 \n	COUNT:		5			Number of times to probe each host\n\n	INTERVAL:	4			Interval between packets sent\n							(in seconds)\n\n	**  use -h or --help for to print this help message! **
 \n----------------------------------------------------------------------------------\n\n\nExample:\npython3 swee-ping 192.168.1.1-100 1 2
 '''
-MCCOY = '''
-           ______             ________________
-          /      \           /                \'
-         | ////// |         |  He's dead, Jim! |
-        _|/ ^  ^ \|_         \_  _____________/
-       | \  @  @  / |          ||
-        \_   ..   _/      _____/
-          | |--| |
-           \____/
-           _|__|_
-   _______||||||||_______
-  /   |  |------         \'
- /   ||__|      (=(^)=)   \'
-|   ||                 |   |
-|   ||                 |   |
-
-'''
-use_mccoy = False
-
 
 try:
     sys.argv[1]
@@ -96,8 +77,6 @@ def scan_network(ip, cnt, intv):
 def scan_output_comments(address, host_state):
     if host_state:
         print(cl_cy+"\tStatus on "+cl_mg+"{}:".format(address) +cl_cy+" WE'VE GOT A LIVE ONE!" +cl_gr+"\t:D"+cl_reset)
-    elif use_mccoy:
-        print(MCCOY)
     else:
         print(cl_rd+"\tStatus on {}: HE'S DEAD JIM".format(address) +cl_mg+"\t\tX_x"+cl_reset)
 
