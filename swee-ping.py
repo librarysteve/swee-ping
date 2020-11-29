@@ -71,7 +71,7 @@ def dash_to_list(address_range):
 def scan_network(ip, cnt, intv):
     host = ping(ip, count=cnt, interval=intv)
     host_data = [host.address, host.is_alive]
-    print("\tscanning:\t{}".format(host.address))
+    print("\ttryiing:\t{}".format(host.address))
     host_scan_data.append(host_data)
 
 def scan_output_comments(address, host_state):
